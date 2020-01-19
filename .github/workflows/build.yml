@@ -27,7 +27,7 @@ jobs:
       
       - name: Deploy to GitHub Pages
         run: |
-          cd __sapper__/export/skript-website
+          cd public
           git init
           git config --global user.email "${EMAIL}"
           git config --global user.name "Olyno"
