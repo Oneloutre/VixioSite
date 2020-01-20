@@ -1,12 +1,16 @@
+<script>
+    let active = false;
+</script>
+
 <nav class="navbar">
     <div class="navbar-brand">
-        <button class="navbar-burger">
+        <a class="navbar-burger" href="#!" on:click|preventDefault={() => active = !active}>
             <span></span>
             <span></span>
             <span></span>
-        </button>
+        </a>
     </div>
-    <div class="navbar-menu">
+    <div class="navbar-menu" class:is-active={active}>
         <div class="navbar-start">
 
             <a class="navbar-item" href="/">
