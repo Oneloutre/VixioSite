@@ -7,6 +7,7 @@
 	import Sidebar from './components/Sidebar.svelte';
 	import Card from './components/Card.svelte';
 	import TopArrow from './components/TopArrow.svelte';
+	import Footer from './components/Footer.svelte';
 
 	let effects = [];
 	let conditions = [];
@@ -66,3 +67,5 @@
 	</div>
 
 </div>
+
+<Footer />
