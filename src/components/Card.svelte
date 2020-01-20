@@ -5,13 +5,24 @@
 
     const id = syntax.name.toLowerCase().replace(/\s/g, '_');
 
+    async function copyLink(elementId) {
+        window.location.href = window.location.href.replace(/#\w+$/g, '') + `#${elementId}`;
+        const dummy = document.createElement('input'),
+              text = window.location.href;
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+    }
+
 </script>
 
 <div class="card top" {id}>
     <header class="card-header">
         <span class="tag is-large" style="background-color: rgb(97, 237, 120)">{type.toUpperCase()}</span>
         <p class="card-header-title">{syntax.name}</p>
-        <a aria-label="more options" class="card-header-icon" href="#{id}">
+        <a aria-label="more options" class="card-header-icon" href="#!" on:click|preventDefault={() => copyLink(id)}>
             <span>Copy Link</span>
             <span class="icon"><i class="fas fa-hashtag"></i></span>
         </a>
