@@ -42,15 +42,15 @@
 <TopArrow />
 
 <div class="container top">
-	<div class="has-text-centered">
-		<input class="input has-text-centered search-input" on:keypress={search} type="text" placeholder="Find a syntax">
-		<br><br>
-	</div>
 	<div class="columns">
-		<div class="column is-2">
+		<div class="column is-2 is-hidden-mobile">
 			<Sidebar />
 		</div>
 		<div class="column is-10">
+			<div class="has-text-centered">
+				<input class="input has-text-centered search-input" on:keypress={search} type="text" placeholder="Find a syntax">
+				<br><br>
+			</div>
 			<div class="syntaxes top">
 
 				{#each Object.keys(syntaxes) as syntaxType}
